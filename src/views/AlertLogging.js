@@ -13,6 +13,7 @@ const AlertLogging = (props) => {
   const [visible, setVisible] = useState(false)
   const [visible1, setVisible1] = useState(false)
 
+
   useEffect(() => {
       getAlertItems(currRole);
   },[currRole,getAlertItems])
