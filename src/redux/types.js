@@ -1,0 +1,22 @@
+export const SET_AUTHENTICATED = 'SET_AUTHENTICATED';
+export const SET_UNAUTHENTICATED = 'SET_UNAUTHENTICATED';
+export const SET_USER = 'SET_USER';
+export const SET_CURR_ROLE = 'SET_CURR_ROLE';
+export const LOADING_USER = 'LOADING_USER';
+export const MARK_NOTIFICATIONS_READ = 'MARK_NOTIFICATIONS_READ';
+// UI reducer types
+export const SET_ERRORS = 'SET_ERRORS';
+export const LOADING_UI = 'LOADING_UI';
+export const CLEAR_ERRORS = 'CLEAR_ERRORS';
+export const LOADING_DATA = 'LOADING_DATA';
+export const STOP_LOADING_UI = 'STOP_LOADING_UI';
+export const CLOSE_SIDEBAR= "TOGGLE_SIDEBAR";
+export const OPEN_SIDEBAR= "OPEN_SIDEBAR";
+export const SET_SIDEBAR = "GET_SIDEBAR";
+export const GET_MENU_STATE= "GET_MENU_STATE";
+// Data reducer types
+export const SET_SENSORS = "SET_SENSORS";
+export const SET_ALERTS = 'SET_ALERTS'
+export const SET_ALERT_ASIGNEE = "SET_ALERT_ASIGNEE"
+export const SET_ALERT_STATUS = "SET_ALERT_STATUS"
+export const SUBMIT_ALERT_COMMENT = "SUBMIT_ALERT_COMMENT"
