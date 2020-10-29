@@ -1,16 +1,19 @@
+import moment from 'moment';
 import {
     LOADING_DATA,
     SET_SENSORS,
     SET_ALERTS,
     SET_ALERT_ASIGNEE,
     SET_ALERT_STATUS,
-    SUBMIT_ALERT_COMMENT
+    SUBMIT_ALERT_COMMENT,
+    SET_STAFF
 
   } from '../types';
   const initialState = {
     loading:false,
     sensors:[],
-    alerts:[]
+    alerts:[],
+    staff:[]
   };
 
   export default function(state = initialState, action) {
@@ -34,21 +37,31 @@ import {
           alerts: action.payload,
           loading:false
         }
+      case SET_STAFF:
+        return{
+          ...state,
+          staff:action.payload,
+          loading:false
+        }
       case SET_ALERT_ASIGNEE:
+        state.alerts.forEach(alert => {
+          if(alert.id === action.payload.alertId){
+            alert.assigned = action.payload.newAsignee
+          }
+        });
         return {
           ...state,
-          alert: {
-            ...state.alert,
-            assigned: action.payload
-          }
         };
         case SET_ALERT_STATUS:
+          state.alerts.forEach(alert => {
+            if(alert.id === action.payload.alertId){
+              alert.status = action.payload.newStatus
+              alert.resolve_date= moment().format('ll')
+              alert.resolve_time= moment().format('LT')
+            }
+          });
           return {
             ...state,
-            alert: {
-              ...state.alert,
-              status: action.payload
-            }
           };
       default:
         return state;
